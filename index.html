@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    /* --- Style Khusus Footer --- */
+    .ajeng-footer-wrapper {
+        background-color: #18375d;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        padding: 40px 20px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 8px; /* Opsional: memberi sedikit lengkungan jika di dalam card */
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .ajeng-footer-wrapper *, 
+    .ajeng-footer-wrapper *::before, 
+    .ajeng-footer-wrapper *::after {
+        box-sizing: border-box;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 30px;
+    }
+
+    /* Bagian Kiri: Brand & Socials */
+    .footer-section-brand {
+        flex: 1 1 250px; /* Responsive width */
+    }
+
+    .footer-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 15px 0;
+        color: #ffffff;
+    }
+
+    .footer-text {
+        opacity: 0.8;
+        margin: 0 0 20px 0;
+        font-size: 0.9rem;
+    }
+
+    .social-row {
+        display: flex;
+        gap: 12px;
+    }
+
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: background 0.3s;
+        border: none;
+    }
+
+    .social-btn:hover {
+        background-color: #ffffff;
+        color: #18375d;
+    }
+
+    /* Bagian Kanan: Contact List */
+    .footer-section-contact {
+        flex: 1 1 200px;
+    }
+
+    .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-list li {
+        margin-bottom: 12px;
+    }
+
+    .contact-link {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+    }
+
+    .contact-link:hover {
+        color: #ffffff;
+    }
+
+    /* Copyright & Credit */
+    .footer-bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    .copyright-text {
+        font-size: 0.8rem;
+        opacity: 0.6;
+        margin: 0;
+    }
+
+    .small-credit {
+        font-size: 10px; /* Sangat kecil */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.3;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    /* Mobile Adjustment */
+    @media (max-width: 480px) {
+        .footer-content {
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .footer-bottom-row {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+</style>
+
+<div class="ajeng-footer-wrapper">
+    <div class="footer-content">
+        
+        <div class="footer-section-brand">
+            <h3 class="footer-title">Ajengwahys</h3>
+            <p class="footer-text">Stay connected.</p>
+            
+            <div class="social-row">
+                <a href="instagram.com/ajengwahys" target="_blank" class="social-btn" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="threads.com/ajengwahys" target="_blank" class="social-btn" title="Threads">
+                    <i class="fa-brands fa-threads"></i>
+                </a>
+                <a href="tiktok.com/ajengwahyst" target="_blank" class="social-btn" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-section-contact">
+            <h3 class="footer-title">Contact</h3>
+            <ul class="contact-list">
+                <li>
+                    <a href="https://wa.link/g340vm" target="_blank" class="contact-link">
+                        <i class="fab fa-whatsapp"></i> Whatsapp
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:email@domain.com" target="_blank" class="contact-link">
+                        <i class="far fa-envelope"></i> ajengwahys@gmail.com
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom-row">
+        <p class="copyright-text">&copy; 2025 Ajengwahys. All rights reserved.</p>
+        <p class="small-credit">Site crafted by hanmade</p>
+    </div>
+</div>
