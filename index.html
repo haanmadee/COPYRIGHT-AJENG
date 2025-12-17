@@ -2,18 +2,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    /* --- Style Khusus Footer --- */
+    /* --- Style Minimalis Footer --- */
     .ajeng-footer-wrapper {
         background-color: #18375d;
         color: #ffffff;
         font-family: 'Inter', sans-serif;
-        padding: 40px 20px 20px;
+        padding: 24px 16px; /* Padding luar diperkecil */
         width: 100%;
         box-sizing: border-box;
-        border-radius: 8px; /* Opsional: memberi sedikit lengkungan jika di dalam card */
-        font-size: 14px;
-        line-height: 1.5;
-        text-align: left;
+        border-radius: 8px;
+        font-size: 13px; /* Font dasar sedikit diperkecil */
+        line-height: 1.4;
     }
 
     .ajeng-footer-wrapper *, 
@@ -22,51 +21,55 @@
         box-sizing: border-box;
     }
 
+    /* Layout Utama: Grid 2 Kolom (Kiri & Kanan) */
     .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        margin-bottom: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Membagi layar jadi 2 kolom sama rata */
+        gap: 16px; /* Jarak antar kolom (spasi 1 cukup) */
+        margin-bottom: 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 30px;
+        padding-bottom: 20px;
     }
 
-    /* Bagian Kiri: Brand & Socials */
-    .footer-section-brand {
-        flex: 1 1 250px; /* Responsive width */
-    }
-
+    /* Judul Section (Ajengwahys & Contact) */
     .footer-title {
-        font-size: 1.25rem;
+        font-size: 1rem; /* Ukuran judul pas, tidak kegedean */
         font-weight: 600;
-        margin: 0 0 15px 0;
+        margin: 0 0 8px 0; /* Jarak bawah judul dirapetin */
         color: #ffffff;
+        letter-spacing: -0.02em;
     }
 
     .footer-text {
-        opacity: 0.8;
-        margin: 0 0 20px 0;
-        font-size: 0.9rem;
+        opacity: 0.7;
+        margin: 0 0 12px 0;
+        font-size: 0.8rem;
+    }
+
+    /* --- Bagian Kiri: Brand & Socials --- */
+    .footer-section-brand {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .social-row {
         display: flex;
-        gap: 12px;
+        gap: 8px; /* Jarak antar icon sosmed rapet */
     }
 
     .social-btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+        width: 32px; /* Ukuran tombol diperkecil dikit biar manis */
+        height: 32px;
         background-color: rgba(255, 255, 255, 0.1);
         color: #ffffff;
         border-radius: 50%;
         text-decoration: none;
         transition: background 0.3s;
-        border: none;
+        font-size: 14px;
     }
 
     .social-btn:hover {
@@ -74,9 +77,12 @@
         color: #18375d;
     }
 
-    /* Bagian Kanan: Contact List */
+    /* --- Bagian Kanan: Contact List --- */
     .footer-section-contact {
-        flex: 1 1 200px;
+        /* Opsional: Jika ingin teks 'Contact' rata kanan, hapus comment di bawah ini */
+        /* text-align: right; align-items: flex-end; */
+        display: flex;
+        flex-direction: column;
     }
 
     .contact-list {
@@ -86,41 +92,50 @@
     }
 
     .contact-list li {
-        margin-bottom: 12px;
+        margin-bottom: 8px; /* Jarak antar kontak rapet */
     }
 
     .contact-link {
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 10px;
-        font-size: 0.9rem;
+        gap: 8px;
+        font-size: 0.8rem; /* Font kontak kecil minimalis */
         transition: color 0.2s;
+        
+        /* Agar email panjang tidak merusak layout di HP kecil */
+        word-break: break-word; 
     }
 
     .contact-link:hover {
         color: #ffffff;
     }
+    
+    .contact-link i {
+        font-size: 14px; /* Icon disamakan ukurannya */
+        width: 16px; /* Lebar tetap agar teks rata */
+        text-align: center;
+    }
 
-    /* Copyright & Credit */
+    /* --- Copyright & Credit --- */
     .footer-bottom-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        gap: 10px;
-        padding-top: 10px;
+        gap: 8px;
+        padding-top: 0;
     }
 
     .copyright-text {
-        font-size: 0.8rem;
-        opacity: 0.6;
+        font-size: 0.75rem;
+        opacity: 0.5;
         margin: 0;
     }
 
     .small-credit {
-        font-size: 10px; /* Sangat kecil */
+        font-size: 9px;
         text-transform: uppercase;
         letter-spacing: 1px;
         opacity: 0.3;
@@ -128,18 +143,11 @@
         margin: 0;
     }
 
-    /* Mobile Adjustment */
-    @media (max-width: 480px) {
-        .footer-content {
-            flex-direction: column;
-            gap: 40px;
-        }
-        
-        .footer-bottom-row {
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-        }
+    /* Mobile Adjustment Khusus */
+    @media (max-width: 360px) {
+        /* Untuk HP yang layarnya sangat kecil, font lebih kecil lagi agar muat */
+        .footer-title { font-size: 0.9rem; }
+        .contact-link { font-size: 0.75rem; }
     }
 </style>
 
@@ -172,8 +180,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:email@domain.com" target="_blank" class="contact-link">
-                        <i class="far fa-envelope"></i> ajengwahys@gmail.com
+                    <a href="mailto:ajengwahys@gmail.com" target="_blank" class="contact-link">
+                        <i class="far fa-envelope"></i> Email Me
                     </a>
                 </li>
             </ul>
@@ -181,7 +189,7 @@
     </div>
 
     <div class="footer-bottom-row">
-        <p class="copyright-text">&copy; 2025 Ajengwahys. All rights reserved.</p>
-        <p class="small-credit">Site crafted by hanmade</p>
+        <p class="copyright-text">&copy; 2025 Ajengwahys.</p>
+        <p class="small-credit">Site by hanmade</p>
     </div>
 </div>
